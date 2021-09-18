@@ -1,3 +1,4 @@
+from flask_sqlalchemy import SQLAlchemy
 from app import create_app, db
 from flask_script import Manager,Server
 from app.models import User,Pitch,Comment
@@ -10,6 +11,7 @@ app = create_app('production')
 
 manager = Manager(app)
 migrate = Migrate(app,db)
+# db = SQLAlchemy()
 
 manager.add_command('server',Server)
 manager.add_command('db',MigrateCommand)
