@@ -9,8 +9,8 @@ from .. import db, photos
 @login_required
 def index():
     """
-    View root page function that returns the index page and its data
-    """
+     View root page function that returns the index page and its data
+     """
     title = 'Pitches'
     product_pitch = Pitch.query.filter_by(category = 'Product Pitch').all()
     pickup_lines = Pitch.query.filter_by(category = 'Pickup Lines').all()
