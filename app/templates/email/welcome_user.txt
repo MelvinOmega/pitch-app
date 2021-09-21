@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to  pitch app
+Please  feel free to add more pitches and comment on pitches posted by other users

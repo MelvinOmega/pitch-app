@@ -1,0 +1,73 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+
+{% block content %}
+<br>
+
+<div class="container">
+    
+    <br><br>
+    <div class="row">
+        <div class="col">
+            <h2 class="bg-danger text-center text-light rounded p-3">Interview pitch</h2>
+            <div class="text-center add-pitch ">
+                <a class="nav-link" href="{{url_for('main.new_pitch')}}">
+                    <button class="btn btn-large bg-primary rounded text-light"> CLICK TO CREATE PITCH </button>
+                </a>
+            </div>
+            <div class="bg-secondry">
+                {{ macro.showPitch(interview)}}
+            </div>
+
+        </div>
+        <br>
+        <div class="col">
+            <h2 class="bg-danger text-center text-light rounded p-3">Product pitch</h2>
+            <div class="text-center add-pitch ">
+                <a class="nav-link" href="{{url_for('main.new_pitch')}}">
+                    <button class="btn btn-large bg-primary rounded text-light"> CLICK TO CREATE PITCH </button>
+                </a>
+            </div>
+            <div class="bg-secondry">
+                {{ macro.showPitch(product)}}
+            </div>
+
+        </div>
+        <br>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <h2 class="bg-danger text-center text-light rounded p-3">Movie pitch</h2>
+            <div class="text-center add-pitch ">
+                <a class="nav-link" href="{{url_for('main.new_pitch')}}">
+                    <button class="btn btn-large bg-primary rounded text-light"> CLICK TO CREATE PITCH </button>
+                </a>
+            </div>
+            <div class="bg-secondry">
+                {{ macro.showPitch(movie)}}
+            </div>
+
+        </div>
+        <br>
+
+        <div class="col">
+            <h2 class="bg-danger text-center text-light rounded p-3">Life pitch</h2>
+            <div class="text-center add-pitch ">
+                <a class="nav-link" href="{{url_for('main.new_pitch')}}">
+                    <button class="btn btn-large bg-primary rounded text-light"> CLICK TO CREATE PITCH </button>
+                </a>
+            </div>
+            <div class="bg-secondry">
+                {{ macro.showPitch(life)}}
+            </div>
+
+        </div>
+        <br>
+        
+
+    </div>
+</div>
+{% endblock %}

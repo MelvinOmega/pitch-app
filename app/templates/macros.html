@@ -1,0 +1,67 @@
+{% macro showPitch(pitches) %}
+<div class="pitch">
+    {% if pitches %}
+    {% for pitch in pitches %}
+    <div class="col">
+        <br>
+        <div class="card card-repo">
+          <div class="card-body">
+            <h5 class="card-title heading text-center">{{pitch.title}}</h5>
+            <span class="content-end text-muted"><strong>Category: {{pitch.category}}</strong></span>
+          </div>
+          <div class="card-body">
+            <p class="card-text mt-2 text-center">{{pitch.post}}</p>
+          </div>
+          <div class="card-body text-center">
+            <h6 class="card-text">
+              <strong>
+                Created by: <span class="user text-info">{{pitch.user.username}}</span>
+                On: <small class="text-info text-muted mr-2">{{ pitch.time.strftime('%Y-%m-%d') }}</small>
+              </strong>
+            </h6>
+          </div>
+          <div class="card-body">
+            <h6 class="card-text mt-2 text-center">
+              <hr>
+              <a class="text-decoration-none text-dark" href="{{url_for('main.comment',pitch_id = pitch.id)}}">
+                <i class="fas fa-comment"></i>
+                Comment: {{pitch.comment.count()}}
+              </a>
+              <hr>
+            </h6>
+          </div>
+
+          <div class="row text-center p-2">
+            <div class="col upvote">
+              <button class="btn btn-success">
+                  <a class="text-decoration-none text-light" href="{{url_for('main.like',id = pitch.id)}}">
+                      <i class="fa fa-thumbs-up"></i> Upvote {{pitch.upvote.count()}}
+                  </a>
+              </button>
+            </div>
+            <div class="col downvote">
+              <button class="btn btn-danger">
+                  <a class="text-decoration-none text-light" href="{{url_for('main.dislike',id = pitch.id)}}">
+                      <i class="fa fa-thumbs-down"></i> Downvote {{pitch.downvote.count()}}
+                  </a>
+              </button>
+            </div>
+            
+            
+          </div>
+          <!-- <div class="card-body">
+            <h6 class="card-text mt-2 text-center"></h6>
+          </div> -->
+        </div>
+      </div>
+
+    <!-- del 1 start -->
+    
+
+    <!-- del 1 end -->
+
+    {% endfor %}
+    {% endif %}
+</div>
+
+{% endmacro %}
