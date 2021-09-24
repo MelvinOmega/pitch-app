@@ -7,7 +7,7 @@ class Config:
     '''
     SECRET_KEY = os.urandom(32)
     # SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://thinkpad:melvin@localhost/pitches'   
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:melvin@localhost/pitches'   
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
@@ -54,7 +54,7 @@ class DevConfig(Config):
 
 
 class TestConfig(Config):
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://thinkpad:melvin@localhost/pitches'
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:melvin@localhost/pitches'
 
 
 config_options = {
